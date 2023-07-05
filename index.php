@@ -17,11 +17,15 @@
                     <h1>Password Generator</h1>
                     <div class="content bg-primary p-5 mt-3">
                         <?php
-                            if(isset($_GET['password']) && $_GET['password'] != '' && is_numeric($_GET['password']) == true) {?>
+                            if(isset($_GET['password']) && $_GET['password'] != '' && is_numeric($_GET['password']) == true  && $_GET['password'] < 30) {?>
                                 <div class="alert alert-success" role="alert">
                                     <?php echo "Password generata: ".randomPassword() ?>
                                 </div>
-                        <?php } ?>
+                        <?php } else if(isset($_GET['password'])) { ?>
+                                    <div class="alert alert-danger">
+                                        INSERIRE SOLO NUMERI SUPERIORI A ZERO E MINORI DI 30
+                                    </div>
+                                    <?php } ?>
                         <form action="index.php" method="GET" class="form-group">
                             <label for="password">Inserisci la lungezza della password</label>
                             <input type="text" class="form-control w-25" placeholder="" name="password" id="password">
