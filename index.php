@@ -21,16 +21,16 @@
                                 <div class="alert alert-success" role="alert">
                                     <?php echo "Password generata: ".randomPassword() ?>
                                 </div>
-                        <?php } else if(isset($_GET['password'])) { ?>
-                                    <div class="alert alert-danger">
-                                        INSERIRE SOLO NUMERI SUPERIORI A 7 E MINORI DI 30
-                                    </div>
-                                    <?php } ?>
+                        <?php } 
+                            else if(isset($_GET['password'])) { ?>
+                                <div class="alert alert-danger">
+                                    INSERIRE SOLO NUMERI SUPERIORI A 7 E MINORI DI 30
+                                </div>
+                        <?php } ?>
                         <form action="index.php" method="GET" class="form-group">
                             <label for="password">Inserisci la lungezza della password</label>
                             <input type="text" class="form-control w-25" placeholder="" name="password" id="password">
                             <button type="submit" class="btn btn-success mt-3">Invia</button>
-                            <button class="btn btn-secondary mt-3">Annulla</button>
                         </form>
                     </div>
                 </div>
